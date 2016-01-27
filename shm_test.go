@@ -30,5 +30,6 @@ func RunShell(shell_script string) (out string, err error) {
 
 	shout, err = exec.Command("/bin/bash", "-c", shell_script).CombinedOutput()
 	out = string(shout)
+	fmt.Printf("command output: %s\n", out)
 	return
 }
