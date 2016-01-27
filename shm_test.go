@@ -8,8 +8,8 @@ import (
 )
 
 func TestShm(t *testing.T) {
-	RunShell("df")
-	result, err := RunShell("df -BM | grep shm")
+	//RunShell("df")
+	result, err := RunShell("df -BM /dev/shm| grep shm")
 	if err != nil {
 		t.Fatalf("could not run shell: %v", err)
 	}
@@ -23,7 +23,7 @@ func TestShm(t *testing.T) {
 	if megabytes < 900 {
 		t.Errorf("shm size is too small: %s", size)
 	}
-	fmt.Printf("Size is %dM\n", megabytes)
+	fmt.Printf("Size is %dM, %s\n", megabytes, size)
 }
 
 func RunShell(shell_script string) (out string, err error) {
