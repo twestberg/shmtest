@@ -8,6 +8,7 @@ import (
 )
 
 func TestShm(t *testing.T) {
+	RunShell("df")
 	result, err := RunShell("df -BM | grep shm")
 	if err != nil {
 		t.Fatalf("could not run shell: %v", err)
