@@ -1,4 +1,4 @@
 golang:
-	golang_version: 1.5.3
+  golang_version: 1.5.3
 tests:
-	- go test
+  - go test
